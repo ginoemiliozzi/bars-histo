@@ -18,6 +18,7 @@ import {
   TagLabel,
 } from "@chakra-ui/core";
 import _ from "lodash";
+import Header from "../components/Header";
 
 const range = (start, end) => {
   if (!start || !end) return [];
@@ -96,7 +97,8 @@ const DataConstructor = ({ history }) => {
   };
 
   return (
-    <Box p={10}>
+    <>
+      <Header />
       <Box mb={3} p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">
         <Heading fontSize="xl">Use your own data!</Heading>
         <Text mt={4}>
@@ -107,8 +109,9 @@ const DataConstructor = ({ history }) => {
       <Flex mb={10}>
         <Input
           mr={3}
-          placeholder="Category name"
+          placeholder="Add a category"
           size="md"
+          focusBorderColor="green.400"
           variant="flushed"
           value={categoryName}
           onChange={e => setCategoryName(e.target.value)}
@@ -135,7 +138,7 @@ const DataConstructor = ({ history }) => {
         ))}
       </List>
       <Box mb={3} p={5}>
-        <Text>How many periods of time do you want?</Text>
+        <Text>How many periods of time do you want to represent?</Text>
         <NumberInput mb={5} min={1} max={100}>
           <NumberInputField
             onChange={e => setPeriods(e.target.value)}
@@ -171,10 +174,10 @@ const DataConstructor = ({ history }) => {
       </Box>
       <Box>
         <Button onClick={() => buildFinalData(tempData, classesAvailable)}>
-          Confirm data
+          Generate animation
         </Button>
       </Box>
-    </Box>
+    </>
   );
 };
 

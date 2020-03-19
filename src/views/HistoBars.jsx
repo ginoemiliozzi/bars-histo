@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useInterval } from "./hooks/useInterval";
+import { useInterval } from "../hooks/useInterval";
 import _ from "lodash";
 import { useTransition, animated } from "react-spring";
 import { useLocation } from "react-router-dom";
+import { Box, Text } from "@chakra-ui/core";
+import Header from "../components/Header";
 
 const HistoBars = () => {
   const location = useLocation();
@@ -40,8 +42,9 @@ const HistoBars = () => {
 
   return (
     <>
-      <h2>Tiempo {entries[currentIndex][0]}</h2>
-      {transitions.map(({ item, props: { y, ...rest }, key }, index) => (
+      <Header />
+      <Text>Period {entries[currentIndex][0]}</Text>
+      {transitions.map(({ item, props: { y, ...rest }, key }) => (
         <animated.div
           key={key}
           style={{
