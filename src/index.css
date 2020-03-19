@@ -1,13 +1,40 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.bblue {
+  background: linear-gradient(to right, lightblue, blue);
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bgreen {
+  background: linear-gradient(to right, lightgreen, green);
+}
+.bred {
+  background: linear-gradient(to right, pink, red);
+}
+.borange {
+  background: linear-gradient(to right, rgb(253, 185, 59), orangered);
+}
+.byellow {
+  background: linear-gradient(
+    to right,
+    rgba(121, 116, 76, 1) 0%,
+    rgba(247, 255, 0, 1) 100%
+  );
+}
+.bpurple {
+  background: linear-gradient(
+    90deg,
+    rgba(109, 76, 121, 1) 0%,
+    rgba(220, 0, 255, 1) 100%
+  );
+}
+.bpink {
+  background: linear-gradient(
+    90deg,
+    rgba(121, 76, 100, 1) 0%,
+    rgba(255, 0, 187, 1) 100%
+  );
+}
+.bblack {
+  background: linear-gradient(
+    90deg,
+    rgba(156, 156, 156, 1) 0%,
+    rgba(32, 29, 26, 1) 100%
+  );
 }
