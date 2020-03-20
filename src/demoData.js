@@ -1,4 +1,4 @@
-const data = {
+export default {
   1: [
     { name: "Scala", value: 120, class: "bblue" },
     { name: "Javascript", value: 120, class: "bgreen" },

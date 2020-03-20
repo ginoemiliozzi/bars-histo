@@ -1,7 +1,9 @@
 import React from "react";
-import { Flex, Heading } from "@chakra-ui/core";
+import { Flex, Heading, Button } from "@chakra-ui/core";
+import { useLocation, Link } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   return (
     <Flex
       flexDirection="column"
@@ -13,6 +15,13 @@ const Header = () => {
       <Heading as="h2" size="xs">
         Dynamic historical graph bar
       </Heading>
+      {location.pathname === "/histobars" && (
+        <Link to="/">
+          <Button mt={3} variant="outline" variantColor="green">
+            Use other data
+          </Button>
+        </Link>
+      )}
     </Flex>
   );
 };

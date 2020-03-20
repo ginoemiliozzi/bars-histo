@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/core";
 import _ from "lodash";
 import Header from "../components/Header";
+import demoData from "../demoData";
 
 const range = (start, end) => {
   if (!start || !end) return [];
@@ -96,17 +97,33 @@ const DataConstructor = ({ history }) => {
     });
   };
 
+  const redirectToDemo = () => {
+    history.push({
+      pathname: "/histobars",
+      state: { data: demoData },
+    });
+  };
+
   return (
     <>
       <Header />
       <Box mb={3} p={5} shadow="md" borderWidth="1px" flex="1" rounded="md">
-        <Heading fontSize="xl">Use your own data!</Heading>
+        <Flex justifyContent="space-between" alignItems="center">
+          <Heading fontSize="xl">Use your own data!</Heading>
+          <Button
+            variant="outline"
+            variantColor="green"
+            onClick={redirectToDemo}
+          >
+            Or see a demo
+          </Button>
+        </Flex>
         <Text mt={4}>
           In this section you can fill in your own data to create a dynamic
           historical bar graph.
         </Text>
       </Box>
-      <Flex mb={10}>
+      <Flex p={50} mb={10}>
         <Input
           mr={3}
           placeholder="Add a category"
@@ -173,7 +190,10 @@ const DataConstructor = ({ history }) => {
         })}
       </Box>
       <Box>
-        <Button onClick={() => buildFinalData(tempData, classesAvailable)}>
+        <Button
+          variantColor="green"
+          onClick={() => buildFinalData(tempData, classesAvailable)}
+        >
           Generate animation
         </Button>
       </Box>
